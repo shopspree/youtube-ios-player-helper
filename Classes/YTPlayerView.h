@@ -24,7 +24,8 @@ typedef enum {
     kYTPlayerStatePaused,
     kYTPlayerStateBuffering,
     kYTPlayerStateQueued,
-    kYTPlayerStateUnknown
+    kYTPlayerStateUnknown,
+    kYTPlayerStateStarted
 } YTPlayerState;
 
 /** These enums represent the resolution of the currently loaded video. */
@@ -103,6 +104,8 @@ typedef enum {
 
 /** A delegate to be notified on playback events. */
 @property(nonatomic, weak) id<YTPlayerViewDelegate> delegate;
+
+@property (nonatomic, strong) NSDate *timestamp;
 
 /**
  * This method loads the player with the given video ID.
